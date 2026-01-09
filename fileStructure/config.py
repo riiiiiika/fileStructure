@@ -24,3 +24,16 @@ class Config:
     #GCSの認証情報ファイルのパス
     GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
+    #Mail service
+    MAIL_SERVER = os.getenv('MAIL_SERVER', default='smtp.gmail.com')
+    MAIL_PORT = os.getenv('MAIL_PORT', default='587')
+    MAIL_USE_TLS = os.getenv('MAIL_USE_TLS', default='true')
+    MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+
+    # frontend url
+    FRONTEND_ORIGIN = os.getenv('FRONTEND_ORIGIN')
+
+    # itsDangerous key
+    ITSDANGEROUS_SECRET_KEY = os.getenv('ITSDANGEROUS_SECRET_KEY', default='you-will-never-guess')
+

@@ -3,24 +3,35 @@
 from app import db
 from datetime import datetime
 
-class User(db.Model):
-    __tablename__ = 'users'
+# class User(db.Model):
+    # __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    username = db.Column(db.String(255), nullable=False)
+    # id = db.Column(db.Integer, primary_key=True)
+    # email = db.Column(db.String(255), unique=True, nullable=False)
+    # password = db.Column(db.String(255), nullable=False)
+    # username = db.Column(db.String(255), nullable=False)
 
-    # role = db.Column(db.String(20), default="user")
-    # is_active = db.Column(db.Boolean, default=True)
+    # # role = db.Column(db.String(20), default="user")
+    # # is_active = db.Column(db.Boolean, default=True)
 
     
-    created_at = db.Column(db.DateTime, default=datetime.now)
-    updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)
+    # created_at = db.Column(db.DateTime, default=datetime.now)
+    # updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)
 
 
 ##########################################
-
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    password = db.Column(db.String(255), nullable=False)
+    is_verified = db.Column(db.Boolean, nullable=False, default=False)
+    verification_token = db.Column(db.String(255), nullable=True, unique=True)
+    reset_password_token = db.Column(db.String(120), nullable=True)
+    reset_password_token_expiry = db.Column(db.DateTime, nullable=True)
+    created_at = db.Column(db.DateTime,nullable=False, default=datetime.utcnow())
+    updated_at = db.Column(db.DateTime,nullable=False, default=datetime.utcnow(), onupdate=datetime.utcnow())
 
 #QuestionDBの定義
 class Question(db.Model):
@@ -29,6 +40,7 @@ class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(255), unique=False, nullable=False)
     data = db.Column(db.String(255), nullable=False)
+    
 class Video(db.Model):
     __tablename__ = "videos"
 

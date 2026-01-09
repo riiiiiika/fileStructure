@@ -1,49 +1,3 @@
-# from app.auth import auth_bp
-# from flask import request, jsonify
-# from app.models import User
-# from app.extensions import db, bcrypt
-# from flask_jwt_extended import create_access_token
-
-
-# @auth_bp.route('/register', methods=['POST'])
-# def register():
-#     data = request.get_json()#クライアントから送信されたJSONデータを取得
-#     #各項目を分ける
-#     username = data.get('username')
-#     email = data.get('email')
-#     password = data.get('password')
-#     # DBにユーザーが存在するか確認
-#     user = User.query.filter_by(email=email).first()
-#     if user:
-#         return jsonify({'message': 'ユーザーが登録されています'}), 400
-#     # パスワードをハッシュ化して保存
-#     password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-#     # 新しいユーザーを作成してDBに保存
-#     user = User(username=username, email=email, password=password_hash)
-#     db.session.add(user)
-#     db.session.commit()
-#     return jsonify({'message': 'ユーザー登録成功'}), 201
-
-# # ログイン用のルート
-# @auth_bp.route('/login', methods=['POST'])
-# def login():
-#     data = request.get_json()
-#     email = data.get('email')
-#     password = data.get('password')
-# # データベースの User テーブルから、入力された email と一致するユーザーを1件だけ取り出す。
-#     user = User.query.filter_by(email=email).first()
-#     #ユーザーがいない or パスワードが一致しなければエラーにする
-#     if not user or not bcrypt.check_password_hash(user.password, password):
-#         return jsonify({'message': '無効なメールまたはパスワード'}), 401
-#     #ログイン成功したユーザーIDを使って JWT アクセストークンを作成する。
-#     jwt_token = create_access_token(identity=str(user.id))
-#     # set_acssess_cookies(response, jwt_token)
-
-#     return jsonify({'message': jwt_token}), 200
-
-
-#################################################
-
 from flask import request, jsonify
 from flask_jwt_extended import set_access_cookies, unset_access_cookies, jwt_required, get_jwt_identity
 
@@ -63,29 +17,28 @@ def register():
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
-    # try:
-    result = register_services(username, email, password)
-    # url_for = result.get("url_for")
-    print(result)
-    return "hello"
-    # verification_token = result.get("verification_token")
-    # user = result.get("user")
+    try:
+        result = register_services(username, email, password)
+        # return result
+        url_for = result.get("url_for")
+        verification_token = result.get("verification_token")
+        user = result.get("user")
 
 
-    # email_verification(user.get("email"), verification_token)
+        email_verification(user.get("email"), verification_token)
 
-    # response = jsonify({
-    #     "url_for" : url_for,
-    #     "status": "success",
-    #     "is_verified": {
-    #         "id": user.get("id"),
-    #         "is_verified" : user.get("is_verified"),
-    #     },
-    # }), 201
+        response = jsonify({
+            "url_for" : url_for,
+            "status": "success",
+            "is_verified": {
+                "id": user.get("id"),
+                "is_verified" : user.get("is_verified"),
+            },
+        }), 201
 
-    # return response
-    # except Exception as e:
-    #     return jsonify({"RegisterError": str(e)}), 400
+        return response
+    except Exception as e:
+        return jsonify({"RegisterError": str(e)}), 400
 
 @auth_bp.route("/verify/<token>", methods=["GET"])
 def verify_token(token):

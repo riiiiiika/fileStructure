@@ -20,17 +20,17 @@ def register_services(username, email, password):
         verification_token = secrets.token_urlsafe(16)
         
         user = User(username=username, email=email, password=hash_password, verification_token=verification_token)
+        db.session.add(user)
+        db.session.commit()
+        
+        urlFor = url_for('auth.verify_token', token=verification_token, _external=True)
+        
 
-        urlFor = url_for('auth_bp.verify_token', token=verification_token, _external=True)
-        return urlFor
-        # db.session.add(user)
-        # db.session.commit()
-
-        # return {
-        # "url_for" : urlFor,
-        # "verification_token" : verification_token,
-        # "user": {"id": user.id, "username": user.username, "email": user.email, "is_verified": user.is_verified }
-        # }
+        return {
+        "url_for" : urlFor,
+        "verification_token" : verification_token,
+        "user": {"id": user.id, "username": user.username, "email": user.email, "is_verified": user.is_verified }
+        }
 
     except Exception as e:
         return {"register_error" : str(e)}
@@ -148,3 +148,10 @@ def updated_password(token, new_password):
         return jsonify({'message': 'Password updated'}), 200
 
     return jsonify({'message': 'error'}), 400
+
+
+
+
+
+
+

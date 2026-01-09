@@ -20,15 +20,15 @@ def create_app():
     # cross_origins = current_app.config["CROSS_ORIGINS"]
     CORS(app, supports_credentials=True, resources={r"/*": {"origins": ["http://localhost:5173"]}})
 
-    from app.models import User,Question
 
     #extensionsの初期化
     db.init_app(app)
     bcrypt.init_app(app)
     #jwtの初期化
     jwt.init_app(app)
-
     mail.init_app(app)
+    
+    from app.models import User,Question
     
     #Blueprintの登録
     #profile_bpをappに登録
