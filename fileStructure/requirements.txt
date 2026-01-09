@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+flask_cors
+pymysql
+flask-bcrypt
+Flask-JWT-Extended
+google-cloud-texttospeech
+google-cloud-storage

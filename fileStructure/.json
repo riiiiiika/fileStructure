@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "idyllic-coder-479402-a5",
+  "private_key_id": "a7e99bc3c9eb0628abd032e1c5af7a45932002e5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDW+cjD0AqbDI3k\nWKUQxpl7kZahmL17UzCuHmOASPnYhBpRm3jo1Zp7tVsJq8AyIk8a5H+bCMH8rLIT\nZ5T1AQF+pEWJeiH4fnFCiatrMQlejGgDqmvf04SRF80R0++BaFE/iRhv6vmHm9Mf\nygesIY0xHvbt9C9oLjBu2NY+cQ+wWovF4UAWJrqi8rTv5ojraFVJeTZpRjQV0JmS\nowVAuoLy6ZIPZZmwfKy7ipewC+wNemk+tdQwfvxTRZv7Zb/5Z1E1DqZnu6N0l6dW\nc6I/9CKoQN43jkkq0sJgJ9Ny/9dkTMYBw0f5VwgWX3dYA2oT64llqH1FD2jamxCJ\ned7zQnuDAgMBAAECggEAB5V4R7AnL6EZwFyANj9LWtif/8Nrq9YbeYkI6ZWpesHu\nS8K4WT5v3L1hIM42UY50S/aTqdx9O3S8M4ML9ji63MTezyLH4ARV6osAyR9JvVQm\ntzpj49mKa7PzQBXB9UbA1wT3H7uiYe5VXGG8M45bdMgq3eonYf1/J+nuZPWIICiA\n/QBWc4aoEHjShgkGOkakJHYX5AKqxBaMtYBbBAl6BmkoMdcnCvNWWurGJw2AIHJ3\n6b/tEoW0vVUmjk9/dR6xzuK+eNblvvjXogw59Vjr2SwaJQXHMX2UFNnjte3obyN8\nqFfswYnSk6XcDxn6xoHYvE1LbEubteappCaoCD2YQQKBgQD8g555JICqFtmUDbZo\nubvv8xdBtPB2aDtKnov3wReF+6S8/BCgKUfsIb0Tv2SHeb3GhKj0ojRUKRf4yzYd\nw/iTs7PYov7z4kqp/hsbyID9Fi4kQGzpcwWRpHm92dHSfJ/Gvzg0pQdBWncjwfAO\nczGYcwtnfFRgrhokpmP1X1gn/QKBgQDZ8YFJndESalbNvlzUiNRuvOOwQ42uwc+v\nDv1Oj/g9pIkxwQYKIDAtv8SJ8D/X9cZW9zBvrBoE1rPZubPd7sWrK9AGEFKLfTKR\n13m+GTwYDTTn5zG8zzCrl5Ya7uymczM4aeW/5qDQwg9VscDE/FbQYKwso6I6f4Hb\noYCh8vXJfwKBgGtv5MFOUqAL0M85dl7gh6H0H/UI8zat6mw5QPxM36FWDCWMadZ7\nOeqyACyixjcOCTypvOk5CmK0iUqFy6SmeOD/GIoX77n8kh/5ybbsfFUyVrd94dkB\n42CwRkwMnUWdWK3LNjLP9GJOB1rjbSv4vyVJ7ZQ+RfhMmzr0wJrp0ixRAoGBAJxC\nNzwc1qWpcIsbDVukrwqmi2j5RkAh3VHaIWuOdaFcsrDlf/sKkQB8GeH8Swn/wTDh\nEe0/K3iEp3ZXWsqoQzkytHdkhIpWPUergjH1zcxAy8npTRPeSTr9+DVfUHUW64Zr\nBrrMFEkYmf4K7/dMJMJKTafDurDOcsCRzrROikLpAoGBAIdMvclMhDCKXLrVBNQ7\nntIDR5FqrdNYrOpzciEaxkxNKmkc+IxcB3UiVK9I/0bNl9Z1fpEMdmJceISw/5Dm\n4DgiKHXge1uu7nicAD16pUtxLo36mrcKl/NdXk/W/AGMk6I2UTksi2p9RHqCHlo0\nJkAhTJ/QcI5sGUGbuj/ll7YU\n-----END PRIVATE KEY-----\n",
+  "client_email": "tts-api-service@idyllic-coder-479402-a5.iam.gserviceaccount.com",
+  "client_id": "109377491813029086340",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tts-api-service%40idyllic-coder-479402-a5.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
